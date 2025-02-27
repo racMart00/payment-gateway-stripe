@@ -26,14 +26,16 @@ class StripePaymentIntentRepository {
       'customer': customerId,
       'payment_method': paymentMethodId,
       'confirm': 'true',
+      'return_url':
+          'https://your-website.com/return_url', // Añade la URL de retorno
     };
 
     final response =
         await config.httpClient.post(url, headers: headers, body: body);
 
     if (response.statusCode == 200) {
-      final data = json.decode(response.body);
-      return PaymentIntent(id: data['id']);
+      final responseData = json.decode(response.body);
+      return PaymentIntent(id: responseData['id']);
     } else {
       log('Error al crear intento de pago: ${response.body}');
       return null;

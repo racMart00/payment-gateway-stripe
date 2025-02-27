@@ -1,6 +1,6 @@
 name: stripe_clean_architecture
 description: A clean architecture implementation of Stripe API using Dart.
-version: 0.0.2
+version: 0.0.3
 
 environment:
   sdk: ">=2.19.0 <3.8.0"
