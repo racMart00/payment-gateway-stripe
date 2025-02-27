@@ -13,11 +13,11 @@ void main() async {
     paymentIntentRepository: StripePaymentIntentRepository(),
   );
 
-  const email = "usuario@example.com";
-  const name = "Usuario Prueba";
-  const cardToken = "tok_visa";
+  const email = 'usuario@example.com';
+  const name = 'Usuario Prueba';
+  const cardToken = 'tok_visa';
   const amount = 5000; // En centavos
-  const currency = "usd";
+  const currency = 'usd';
 
   await paymentController.processPayment(email, name, cardToken, amount, currency);
 }

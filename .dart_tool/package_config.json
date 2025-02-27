@@ -260,6 +260,12 @@
       "languageVersion": "3.5"
     },
     {
+      "name": "very_good_analysis",
+      "rootUri": "file:///C:/Users/racMart/AppData/Local/Pub/Cache/hosted/pub.dev/very_good_analysis-7.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
       "name": "vm_service",
       "rootUri": "file:///C:/Users/racMart/AppData/Local/Pub/Cache/hosted/pub.dev/vm_service-15.0.0",
       "packageUri": "lib/",
@@ -273,7 +279,7 @@
     },
     {
       "name": "web",
-      "rootUri": "file:///C:/Users/racMart/AppData/Local/Pub/Cache/hosted/pub.dev/web-1.1.0",
+      "rootUri": "file:///C:/Users/racMart/AppData/Local/Pub/Cache/hosted/pub.dev/web-1.1.1",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -308,7 +314,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2025-02-22T05:40:16.203781Z",
+  "generated": "2025-02-27T23:21:49.188893Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///C:/flutter",

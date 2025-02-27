@@ -1,12 +1,13 @@
 import 'package:dotenv/dotenv.dart';
 
-
 class DotenvConfig {
+  static final DotEnv _env = DotEnv();
+
   static void loadEnv() {
-    DotEnv().load();
+    _env.load();
   }
 
   static String get(String key) {
-    return DotEnv().env[key] ?? '';
+    return _env[key] ?? '';
   }
 }

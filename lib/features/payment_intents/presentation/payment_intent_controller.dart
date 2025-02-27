@@ -1,17 +1,17 @@
-import '../../customers/data/customer_repository.dart';
-import '../../payment_methods/data/payment_method_repository.dart';
-import '../data/payment_intent_repository.dart';
+import 'package:stripe_clean_architecture/features/customers/data/customer_repository.dart';
+import 'package:stripe_clean_architecture/features/payment_methods/data/payment_method_repository.dart';
+import 'package:stripe_clean_architecture/features/payment_intents/data/payment_intent_repository.dart';
 
 class PaymentController {
-  final StripeCustomerRepository customerRepository;
-  final StripePaymentMethodRepository paymentMethodRepository;
-  final StripePaymentIntentRepository paymentIntentRepository;
 
   PaymentController({
     required this.customerRepository,
     required this.paymentMethodRepository,
     required this.paymentIntentRepository,
   });
+  final StripeCustomerRepository customerRepository;
+  final StripePaymentMethodRepository paymentMethodRepository;
+  final StripePaymentIntentRepository paymentIntentRepository;
 
   Future<void> processPayment(String email, String name, String cardToken, int amount, String currency) async {
     final customer = await customerRepository.createCustomer(email, name);
@@ -28,9 +28,9 @@ class PaymentController {
     );
 
     if (paymentIntent != null) {
-      print("Pago exitoso: ${paymentIntent.id}");
+      print('Pago exitoso: ${paymentIntent.id}');
     } else {
-      print("Error en el pago.");
+      print('Error en el pago.');
     }
   }
 }
