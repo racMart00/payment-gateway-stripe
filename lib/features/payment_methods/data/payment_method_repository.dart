@@ -1,8 +1,8 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:stripe_clean_architecture/core/stripe_config.dart';
 import 'package:stripe_clean_architecture/features/payment_methods/domain/payment_method_entity.dart';
-
 
 class StripePaymentMethodRepository {
   final StripeConfig config = StripeConfig();
@@ -17,13 +17,14 @@ class StripePaymentMethodRepository {
 
     final body = {'type': 'card', 'card[token]': cardToken};
 
-    final response = await config.httpClient.post(url, headers: headers, body: body);
+    final response =
+        await config.httpClient.post(url, headers: headers, body: body);
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       return PaymentMethod(id: data['id']);
     } else {
-      print('Error al crear método de pago: ${response.body}');
+      log('Error al crear método de pago: ${response.body}');
       return null;
     }
   }

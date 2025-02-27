@@ -19,5 +19,6 @@ void main() async {
   const amount = 5000; // En centavos
   const currency = 'usd';
 
-  await paymentController.processPayment(email, name, cardToken, amount, currency);
+  await paymentController.processPayment(
+      email, name, cardToken, amount, currency,);
 }

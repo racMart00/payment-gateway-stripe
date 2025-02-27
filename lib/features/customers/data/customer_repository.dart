@@ -1,9 +1,8 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:stripe_clean_architecture/core/stripe_config.dart';
 import 'package:stripe_clean_architecture/features/customers/domain/customer_entity.dart';
-
-
 
 class StripeCustomerRepository {
   final StripeConfig config = StripeConfig();
@@ -18,13 +17,14 @@ class StripeCustomerRepository {
 
     final body = {'email': email, 'name': name};
 
-    final response = await config.httpClient.post(url, headers: headers, body: body);
+    final response =
+        await config.httpClient.post(url, headers: headers, body: body);
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       return Customer(id: data['id'], email: email, name: name);
     } else {
-      print('Error al crear cliente: ${response.body}');
+      log('Error al crear cliente: ${response.body}');
       return null;
     }
   }
